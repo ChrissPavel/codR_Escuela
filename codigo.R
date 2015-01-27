@@ -37,7 +37,12 @@ rep()
 ?rep
 rep(1:4, each = 2, len = 10)
 
+#atributos.
+#names, dimnames dimensions (e.g. matrices, arrays) class length other user-defined attributes/metadata
+
+
 #Varias funciones útiles
+
 
 runif(100)
 rnorm(100)
