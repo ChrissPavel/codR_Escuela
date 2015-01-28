@@ -178,7 +178,11 @@ x2<-sample(100:150, 9, replace=TRUE)
 #crear una matriz A de orden 3,4 con los valores de x2, llenados por filas 
 A<-matrix(x1,3,4,byrow=TRUE)
 
-
+#[ always returns an object of the same class as the original; can be used to select more than one
+#element (there is one exception)
+#[[ is used to extract elements of a list or a data frame; it can only be used to extract a single
+#element and the class of the returned object will not necessarily be a list or data frame
+#$ is used to extract elements of a list or data frame by name
 
 d<-list(x1,x2,A)
 d
