@@ -166,10 +166,21 @@ solve(A)%*%A
 
 
 ###Listas
-a<-sample(1:9,replace=T,10)
-b<-letters
-c<-diag(rep(1,3))
-d<-list(a,b,c)
+
+#Repaso última clase
+#crear un vector x1 que tenga como elementos las cadenas "Hola R"  "R user" "2 Escuela R"
+x1<-c( "Hola R" , "R user", "2 Escuela R")
+#crear un vector x2 de números 9 números aleatorios de números enteros del 100 al 150
+#utilizar una semilla igual a 235
+set.seed(235)
+x2<-sample(100:150, 9, replace=TRUE)
+
+#crear una matriz A de orden 3,4 con los valores de x2, llenados por filas 
+A<-matrix(x1,3,4,byrow=TRUE)
+
+
+
+d<-list(x1,x2,A)
 d
 d[1]
 
