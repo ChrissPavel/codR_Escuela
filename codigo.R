@@ -222,6 +222,21 @@ grep("Merc", rownames(mtcars))
 
 mtcars[grep("Merc", rownames(mtcars)),]
 
+#sample factors
+#complete.cases()
+#mydata$logsize <- log(mydata$size.mm) modifying columns of dataframe
+#remove rows or cols with -c(2,4) assigning NULL
+#function subst
+#newdata <- subset(mydata, sex == "f" & size.mm > 25, select = c(site,id,weight))
+#Factors are used to represent categorical data. Factors can be unordered or ordered. One can think
+#of a factor as an integer vector where each integer has a label.
+#Factors are treated specially by modelling functions like lm() and glm()
+#Using factors with labels is better than using integers because factors are self-describing; having
+#a variable that has values “Male” and “Female” is better than a variable that has values 1 and 2
+
+
+
+
 library()#describe las librerias disponibles
 search()#lista de paquetes con attach
 data()#archivo con bases de datos disponibles 
@@ -236,3 +251,5 @@ dato<-as.data.frame(table(x))
 resultado<-dato[which(dato$Freq==max(dato$Freq)),1]
 return(resultado)
 }
+
+
