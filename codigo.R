@@ -251,5 +251,50 @@ dato<-as.data.frame(table(x))
 resultado<-dato[which(dato$Freq==max(dato$Freq)),1]
 return(resultado)
 }
+#######
+f<-function(x,y){
+
+sqrt(x^2+y^2)/z
+
+}
+
+f<-function(x,y){
+
+sqrt(x^2+y^2)/zz
+
+}
+
+f(3,4) #error
+
+zz<-5
+
+
+library(data.table)
+names(iris)
+
+#convert iris into data.table,
+iris<-as.data.table(iris)
+
+iris[2:6]
+iris[Species=="setosa"]
+iris[Species==c("setosa","versicolor")]
+iris[,.(suma=sum(Sepal.Width)),by=Species]
+
+iris[,var1:=round(exp(Sepal.Width),2)]
+
+iris[,c("var1","var2"):= list(round(exp(Petal.Width),2),round(exp(Sepal.Width)))]
+iris
+
+iris[,c("var1","var2"):= list(round(exp(Petal.Width),2),Sepal.Width[1:3])]
+
+iris
+
+iris[,c("var1","var2"):=NULL]
+iris
+
+setkey(iris,Species)
+iris[c("setosa","virginica")]
+iris["setosa",mult="first"]
+
 
 
