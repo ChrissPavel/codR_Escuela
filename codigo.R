@@ -295,6 +295,101 @@ iris
 setkey(iris,Species)
 iris[c("setosa","virginica")]
 iris["setosa",mult="first"]
+###########################################
+# Curso R Intermedio
+
+# Clase  No. 1
+
+#install.packages("tseries")
+#install.packages("reshape")
+#library(tseries)
+#library(reshape)
+#
+
+#Diferencias entre sort() y order()
+
+
+seq(2, 10, 0.2)
+rep(2,7)
+
+#Comando para revisar opciones de un comando
+example (seq)
+example (rep)
+example (gl)
+
+
+
+
+
+#Variables basicas 2
+
+sort(x)
+rev(x)
+log(x,10)
+sort(mtcars,)
+
+
+
+
+#Funciones Aplly
+
+Acciones repetitivas
+apply rapply sapply mapply 
+
+apply(mtcars,2, mean)
+apply(mtcars,c(1,2), mean)
+
+Creacion de una funcion
+pepito=function(x) exp(-x^2)
+apply(mtcars,2, pepito)
+pepito2=function(x) exp(-(x^2+y^2))
+attach(mtcars)
+mapply(pepito2, mtcars$gear,mtcars$wt)
+detach(mtcars)
+
+ordenar datos
+# sorting examples using the mtcars dataset
+attach(mtcars)
+
+# sort by mpg
+newdata <- mtcars[order(mpg),] 
+
+# sort by mpg and cyl
+newdata <- mtcars[order(mpg, cyl),]
+
+#sort by mpg (ascending) and cyl (descending)
+newdata <- mtcars[order(mpg, -cyl),] 
+
+datos1=read.table("clipboard" , header=T , sep="\t")
+head(datos1)
+fix(datos1)
+names(datos1)
+datos2 <- melt(datos1, id=c("Tipo.Entidad","Entidad","Valores"))
+datos3 <- cast(datos2, Tipo.Entidad+Entidad+variable~Valores)
+write.table(datos3,file="clipboard",sep="\t")
+library(tseries)
+library(forecast)
+#install.packages("forecast")
+
+Funcion para convertir en time series
+Ajusta un Arima
+Forecast
+proy<-function(x) {
+	dat<-ts(x,start=c(2002,7),frequency=12)
+	mdl<-auto.arima(dat,stepwise=FALSE, trace=F)
+	pry<- forecast(mdl,h=12,level=95)
+	return(pry)
+}
+
+resultado<-function
+attach(datos3)
+names(datos3)
+by(datos3[,4],Entidad,proy)
+
+final<-function(x) {
+			res=by(x,Entidad,proy)
+}
+mapply(final,datos3)
 
 
 
