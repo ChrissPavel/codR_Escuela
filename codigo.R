@@ -372,3 +372,5 @@ datos3 <- cast(datos2, Tipo.Entidad+Entidad+variable~Cuenta)
 hist(mtcars$cyl, col = "green")
 rug(mtcars$cyl)
 
+
+
