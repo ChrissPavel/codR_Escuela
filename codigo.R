@@ -364,32 +364,11 @@ datos1=read.table("clipboard" , header=T , sep="\t")
 head(datos1)
 fix(datos1)
 names(datos1)
-datos2 <- melt(datos1, id=c("Tipo.Entidad","Entidad","Valores"))
-datos3 <- cast(datos2, Tipo.Entidad+Entidad+variable~Valores)
-write.table(datos3,file="clipboard",sep="\t")
-library(tseries)
-library(forecast)
-#install.packages("forecast")
-
-Funcion para convertir en time series
-Ajusta un Arima
-Forecast
-proy<-function(x) {
-	dat<-ts(x,start=c(2002,7),frequency=12)
-	mdl<-auto.arima(dat,stepwise=FALSE, trace=F)
-	pry<- forecast(mdl,h=12,level=95)
-	return(pry)
-}
-
-resultado<-function
-attach(datos3)
-names(datos3)
-by(datos3[,4],Entidad,proy)
-
-final<-function(x) {
-			res=by(x,Entidad,proy)
-}
-mapply(final,datos3)
+datos2 <- melt(datos1, id=c("Tipo.Entidad","Entidad","Cuenta"))
+datos3 <- cast(datos2, Tipo.Entidad+Entidad+variable~Cuenta)
+#########################
 
 
+hist(mtcars$cyl, col = "green")
+rug(mtcars$cyl)
 
